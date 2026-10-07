@@ -1,0 +1,17 @@
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+dist/
+target/
+.env
+.secrets/
+data/*.onnx
+data/*.webm
+data/*.mp4
+data/*.jpg
+data/*.png
+data/runs/
+*.log
+playground-export/
+HANDOFF.md

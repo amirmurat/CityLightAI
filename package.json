@@ -1,0 +1,27 @@
+{
+  "name": "citylightai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "chain": "tsx scripts/chain.ts",
+    "test:chain": "tsx --test tests/chain.test.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "0.31.1",
+    "@solana/web3.js": "1.98.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.21",
+    "@types/react": "19.1.5",
+    "@types/react-dom": "19.1.5",
+    "@vitejs/plugin-react": "4.5.0",
+    "tsx": "4.19.4",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
+  }
+}

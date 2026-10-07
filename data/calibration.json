@@ -1,0 +1,11 @@
+{
+  "intersection": "pexels-3052883-demo",
+  "name": "Reference intersection · two observed approaches",
+  "source_mode": "recorded_video",
+  "sample_interval_ms": 500,
+  "zones": {
+    "A": [[0.18, 0.0], [0.30, 0.0], [0.475, 0.24], [0.394, 0.33]],
+    "B": [[0.76, 0.0], [1.0, 0.0], [0.835, 0.4], [0.71, 0.3]]
+  },
+  "note": "A: visible upper-left incoming approach. B: visible upper-right incoming approach. Other approaches and turning movements are excluded. Manually calibrated on the Tom Fisk reference clip. Timings are accelerated demo values, not an approved real-world signal plan. Drone motion limits zone and stopped-vehicle accuracy."
+}

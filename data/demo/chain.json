@@ -1,0 +1,32 @@
+{
+  "status": "finalized",
+  "run_id": "f83f169348f6199cb2b9732c3884e1d8",
+  "program_id": "AbgBg2HV8yVGUmtuZKUpifxitbhWwQ1qgrH4m158LSUx",
+  "authority": "dwimA2yrAdyXuJJb2nFZBshTXvgXBRKchQADXaBYW2v",
+  "registry": "7JuCbzMcyiouw72G8nvcnyKDifuWUepwqB1HpHy8pQno",
+  "receipts": [
+    {
+      "sequence": 0,
+      "address": "3KGueyZMfDCA9i756xSeWsS21LfdLFqYYVHGrCWu4Zor",
+      "signature": "NJPTHEAV4rfSZX8TFTZ97MvRY9vonPvwYXtKWu4okE8tAjYFwDEB6Cw94z3XwDnD9inywEY6qC7mip3TVLm5oFj",
+      "hash": "c47c24f5116d5f3a947f91ac66e82780f8b8540c02f343176a7b7c5d308dba63",
+      "status": "finalized"
+    },
+    {
+      "sequence": 1,
+      "address": "FnnfcivZKXTj1MCvikQVDpQAtSrWiuXAYMmUgXe1Birv",
+      "signature": "zmEg4XdCxyeBcjPumsNoHSoNV16PW4MgWwahYsc3VvbjcehwVfFtBhjHsJmBUzWd7eHkgFFb7SwyFqoyuQV5TRh",
+      "hash": "ef199f2c624f1f9f8e0561019a8177aa04f45ddc160ed84cb284550e0644e940",
+      "status": "finalized"
+    }
+  ],
+  "register_signature": "DjDzkNz6nmPcuuMNvNHCJunTwiouxPDTh76utJUFRFRGhUkEZvHbcUWuZx7cuePVLzQV7KUoVLergaXWgr5zUhe",
+  "verification": {
+    "valid": true,
+    "tampered_rejected": true,
+    "verified_at": "2026-10-07T09:59:51.053Z",
+    "unauthorized_rejected": true,
+    "invalid_sequence_rejected": true,
+    "broken_chain_rejected": true
+  }
+}

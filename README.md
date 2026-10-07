@@ -18,6 +18,8 @@ This MVP processes prerecorded video and replays computed detections. It does no
 
 ## Run locally
 
+For teammates recording the demonstration, the shared GitHub Pages version is a read-only replay of the real processed run and actual Devnet records. It needs no installation or wallet. It does not run new inference or publish transactions. See [team recording instructions](docs/TEAM-DEMO.md).
+
 Requires Python 3.12, Node.js 22+ and pnpm. Windows PowerShell:
 
 ```powershell

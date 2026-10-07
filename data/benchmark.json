@@ -1,0 +1,728 @@
+{
+  "kind": "simplified_queue_simulation",
+  "seconds": 180,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "service_capacity": "One vehicle per green second; no discharge during clearance",
+  "policy": {
+    "min_green_ms": 2000,
+    "max_green_ms": 5000,
+    "yellow_ms": 1000,
+    "all_red_ms": 1000,
+    "max_red_ms": 8000,
+    "fixed_green_ms": 3000,
+    "stale_ms": 2000
+  },
+  "limitations": "Synthetic arrivals and ideal queues, not camera-derived inputs. No turns, pedestrians, spillback or municipal calibration. These results do not establish citywide benefits.",
+  "scenarios": [
+    {
+      "name": "balanced",
+      "fixed": {
+        "total_wait_vehicle_seconds": 375.2,
+        "served": 71.8,
+        "unfinished": 2.7,
+        "peak_queue": 5.9
+      },
+      "fixed_long": {
+        "total_wait_vehicle_seconds": 325.3,
+        "served": 72.4,
+        "unfinished": 2.1,
+        "peak_queue": 5.8
+      },
+      "adaptive": {
+        "total_wait_vehicle_seconds": 247.4,
+        "served": 73.2,
+        "unfinished": 1.3,
+        "peak_queue": 4.9
+      },
+      "trials": [
+        {
+          "seed": 0,
+          "fixed": {
+            "total_wait_vehicle_seconds": 247,
+            "served": 64,
+            "unfinished": 0,
+            "peak_queue": 5
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 229,
+            "served": 64,
+            "unfinished": 0,
+            "peak_queue": 4
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 184,
+            "served": 64,
+            "unfinished": 0,
+            "peak_queue": 4
+          }
+        },
+        {
+          "seed": 1,
+          "fixed": {
+            "total_wait_vehicle_seconds": 319,
+            "served": 70,
+            "unfinished": 3,
+            "peak_queue": 5
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 265,
+            "served": 71,
+            "unfinished": 2,
+            "peak_queue": 5
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 232,
+            "served": 70,
+            "unfinished": 3,
+            "peak_queue": 4
+          }
+        },
+        {
+          "seed": 2,
+          "fixed": {
+            "total_wait_vehicle_seconds": 414,
+            "served": 71,
+            "unfinished": 3,
+            "peak_queue": 7
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 333,
+            "served": 71,
+            "unfinished": 3,
+            "peak_queue": 6
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 251,
+            "served": 72,
+            "unfinished": 2,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 3,
+          "fixed": {
+            "total_wait_vehicle_seconds": 305,
+            "served": 69,
+            "unfinished": 1,
+            "peak_queue": 5
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 256,
+            "served": 69,
+            "unfinished": 1,
+            "peak_queue": 5
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 205,
+            "served": 69,
+            "unfinished": 1,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 4,
+          "fixed": {
+            "total_wait_vehicle_seconds": 373,
+            "served": 76,
+            "unfinished": 4,
+            "peak_queue": 6
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 388,
+            "served": 77,
+            "unfinished": 3,
+            "peak_queue": 7
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 232,
+            "served": 78,
+            "unfinished": 2,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 5,
+          "fixed": {
+            "total_wait_vehicle_seconds": 364,
+            "served": 66,
+            "unfinished": 2,
+            "peak_queue": 6
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 273,
+            "served": 66,
+            "unfinished": 2,
+            "peak_queue": 6
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 195,
+            "served": 67,
+            "unfinished": 1,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 6,
+          "fixed": {
+            "total_wait_vehicle_seconds": 546,
+            "served": 75,
+            "unfinished": 5,
+            "peak_queue": 9
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 403,
+            "served": 78,
+            "unfinished": 2,
+            "peak_queue": 6
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 288,
+            "served": 78,
+            "unfinished": 2,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 7,
+          "fixed": {
+            "total_wait_vehicle_seconds": 464,
+            "served": 76,
+            "unfinished": 6,
+            "peak_queue": 7
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 389,
+            "served": 77,
+            "unfinished": 5,
+            "peak_queue": 7
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 330,
+            "served": 81,
+            "unfinished": 1,
+            "peak_queue": 6
+          }
+        },
+        {
+          "seed": 8,
+          "fixed": {
+            "total_wait_vehicle_seconds": 282,
+            "served": 65,
+            "unfinished": 2,
+            "peak_queue": 4
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 340,
+            "served": 65,
+            "unfinished": 2,
+            "peak_queue": 6
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 192,
+            "served": 66,
+            "unfinished": 1,
+            "peak_queue": 4
+          }
+        },
+        {
+          "seed": 9,
+          "fixed": {
+            "total_wait_vehicle_seconds": 438,
+            "served": 86,
+            "unfinished": 1,
+            "peak_queue": 5
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 377,
+            "served": 86,
+            "unfinished": 1,
+            "peak_queue": 6
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 365,
+            "served": 87,
+            "unfinished": 0,
+            "peak_queue": 6
+          }
+        }
+      ]
+    },
+    {
+      "name": "demand_shift",
+      "fixed": {
+        "total_wait_vehicle_seconds": 1168.2,
+        "served": 68.4,
+        "unfinished": 8.5,
+        "peak_queue": 12.9
+      },
+      "fixed_long": {
+        "total_wait_vehicle_seconds": 882.9,
+        "served": 71.4,
+        "unfinished": 5.5,
+        "peak_queue": 10.6
+      },
+      "adaptive": {
+        "total_wait_vehicle_seconds": 539.9,
+        "served": 73.4,
+        "unfinished": 3.5,
+        "peak_queue": 7.6
+      },
+      "trials": [
+        {
+          "seed": 0,
+          "fixed": {
+            "total_wait_vehicle_seconds": 758,
+            "served": 66,
+            "unfinished": 8,
+            "peak_queue": 9
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 603,
+            "served": 69,
+            "unfinished": 5,
+            "peak_queue": 8
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 393,
+            "served": 72,
+            "unfinished": 2,
+            "peak_queue": 6
+          }
+        },
+        {
+          "seed": 1,
+          "fixed": {
+            "total_wait_vehicle_seconds": 1385,
+            "served": 75,
+            "unfinished": 14,
+            "peak_queue": 15
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 1030,
+            "served": 79,
+            "unfinished": 10,
+            "peak_queue": 12
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 810,
+            "served": 80,
+            "unfinished": 9,
+            "peak_queue": 10
+          }
+        },
+        {
+          "seed": 2,
+          "fixed": {
+            "total_wait_vehicle_seconds": 599,
+            "served": 61,
+            "unfinished": 1,
+            "peak_queue": 10
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 490,
+            "served": 62,
+            "unfinished": 0,
+            "peak_queue": 8
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 280,
+            "served": 62,
+            "unfinished": 0,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 3,
+          "fixed": {
+            "total_wait_vehicle_seconds": 692,
+            "served": 63,
+            "unfinished": 5,
+            "peak_queue": 8
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 556,
+            "served": 66,
+            "unfinished": 2,
+            "peak_queue": 6
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 210,
+            "served": 68,
+            "unfinished": 0,
+            "peak_queue": 4
+          }
+        },
+        {
+          "seed": 4,
+          "fixed": {
+            "total_wait_vehicle_seconds": 1389,
+            "served": 67,
+            "unfinished": 11,
+            "peak_queue": 14
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 985,
+            "served": 72,
+            "unfinished": 6,
+            "peak_queue": 11
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 520,
+            "served": 75,
+            "unfinished": 3,
+            "peak_queue": 8
+          }
+        },
+        {
+          "seed": 5,
+          "fixed": {
+            "total_wait_vehicle_seconds": 1946,
+            "served": 73,
+            "unfinished": 10,
+            "peak_queue": 17
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 1435,
+            "served": 77,
+            "unfinished": 6,
+            "peak_queue": 15
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 965,
+            "served": 78,
+            "unfinished": 5,
+            "peak_queue": 10
+          }
+        },
+        {
+          "seed": 6,
+          "fixed": {
+            "total_wait_vehicle_seconds": 1145,
+            "served": 72,
+            "unfinished": 10,
+            "peak_queue": 11
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 717,
+            "served": 76,
+            "unfinished": 6,
+            "peak_queue": 8
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 423,
+            "served": 78,
+            "unfinished": 4,
+            "peak_queue": 5
+          }
+        },
+        {
+          "seed": 7,
+          "fixed": {
+            "total_wait_vehicle_seconds": 1303,
+            "served": 71,
+            "unfinished": 2,
+            "peak_queue": 19
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 867,
+            "served": 72,
+            "unfinished": 1,
+            "peak_queue": 14
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 565,
+            "served": 72,
+            "unfinished": 1,
+            "peak_queue": 10
+          }
+        },
+        {
+          "seed": 8,
+          "fixed": {
+            "total_wait_vehicle_seconds": 1521,
+            "served": 70,
+            "unfinished": 14,
+            "peak_queue": 14
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 1347,
+            "served": 72,
+            "unfinished": 12,
+            "peak_queue": 14
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 801,
+            "served": 76,
+            "unfinished": 8,
+            "peak_queue": 11
+          }
+        },
+        {
+          "seed": 9,
+          "fixed": {
+            "total_wait_vehicle_seconds": 944,
+            "served": 66,
+            "unfinished": 10,
+            "peak_queue": 12
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 799,
+            "served": 69,
+            "unfinished": 7,
+            "peak_queue": 10
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 432,
+            "served": 73,
+            "unfinished": 3,
+            "peak_queue": 7
+          }
+        }
+      ]
+    },
+    {
+      "name": "overload",
+      "fixed": {
+        "total_wait_vehicle_seconds": 6740.2,
+        "served": 106.5,
+        "unfinished": 73.4,
+        "peak_queue": 73.4
+      },
+      "fixed_long": {
+        "total_wait_vehicle_seconds": 5793.6,
+        "served": 118.3,
+        "unfinished": 61.6,
+        "peak_queue": 61.8
+      },
+      "adaptive": {
+        "total_wait_vehicle_seconds": 5777.5,
+        "served": 118.3,
+        "unfinished": 61.6,
+        "peak_queue": 62.1
+      },
+      "trials": [
+        {
+          "seed": 0,
+          "fixed": {
+            "total_wait_vehicle_seconds": 5460,
+            "served": 106,
+            "unfinished": 72,
+            "peak_queue": 72
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 4479,
+            "served": 118,
+            "unfinished": 60,
+            "peak_queue": 60
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 4611,
+            "served": 117,
+            "unfinished": 61,
+            "peak_queue": 61
+          }
+        },
+        {
+          "seed": 1,
+          "fixed": {
+            "total_wait_vehicle_seconds": 6780,
+            "served": 107,
+            "unfinished": 75,
+            "peak_queue": 75
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 5799,
+            "served": 119,
+            "unfinished": 63,
+            "peak_queue": 63
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 5782,
+            "served": 119,
+            "unfinished": 63,
+            "peak_queue": 63
+          }
+        },
+        {
+          "seed": 2,
+          "fixed": {
+            "total_wait_vehicle_seconds": 6257,
+            "served": 106,
+            "unfinished": 69,
+            "peak_queue": 69
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 5452,
+            "served": 117,
+            "unfinished": 58,
+            "peak_queue": 58
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 5311,
+            "served": 118,
+            "unfinished": 57,
+            "peak_queue": 57
+          }
+        },
+        {
+          "seed": 3,
+          "fixed": {
+            "total_wait_vehicle_seconds": 5768,
+            "served": 106,
+            "unfinished": 67,
+            "peak_queue": 67
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 4944,
+            "served": 117,
+            "unfinished": 56,
+            "peak_queue": 56
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 4976,
+            "served": 116,
+            "unfinished": 57,
+            "peak_queue": 58
+          }
+        },
+        {
+          "seed": 4,
+          "fixed": {
+            "total_wait_vehicle_seconds": 7081,
+            "served": 107,
+            "unfinished": 73,
+            "peak_queue": 73
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 6117,
+            "served": 119,
+            "unfinished": 61,
+            "peak_queue": 61
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 6040,
+            "served": 120,
+            "unfinished": 60,
+            "peak_queue": 60
+          }
+        },
+        {
+          "seed": 5,
+          "fixed": {
+            "total_wait_vehicle_seconds": 6475,
+            "served": 105,
+            "unfinished": 71,
+            "peak_queue": 71
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 5493,
+            "served": 117,
+            "unfinished": 59,
+            "peak_queue": 59
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 5479,
+            "served": 117,
+            "unfinished": 59,
+            "peak_queue": 59
+          }
+        },
+        {
+          "seed": 6,
+          "fixed": {
+            "total_wait_vehicle_seconds": 6974,
+            "served": 106,
+            "unfinished": 75,
+            "peak_queue": 75
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 5813,
+            "served": 119,
+            "unfinished": 62,
+            "peak_queue": 63
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 5933,
+            "served": 118,
+            "unfinished": 63,
+            "peak_queue": 64
+          }
+        },
+        {
+          "seed": 7,
+          "fixed": {
+            "total_wait_vehicle_seconds": 7920,
+            "served": 106,
+            "unfinished": 79,
+            "peak_queue": 79
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 6762,
+            "served": 119,
+            "unfinished": 66,
+            "peak_queue": 66
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 6882,
+            "served": 118,
+            "unfinished": 67,
+            "peak_queue": 68
+          }
+        },
+        {
+          "seed": 8,
+          "fixed": {
+            "total_wait_vehicle_seconds": 7086,
+            "served": 108,
+            "unfinished": 72,
+            "peak_queue": 72
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 6281,
+            "served": 119,
+            "unfinished": 61,
+            "peak_queue": 61
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 6198,
+            "served": 120,
+            "unfinished": 60,
+            "peak_queue": 61
+          }
+        },
+        {
+          "seed": 9,
+          "fixed": {
+            "total_wait_vehicle_seconds": 7601,
+            "served": 108,
+            "unfinished": 81,
+            "peak_queue": 81
+          },
+          "fixed_long": {
+            "total_wait_vehicle_seconds": 6796,
+            "served": 119,
+            "unfinished": 70,
+            "peak_queue": 71
+          },
+          "adaptive": {
+            "total_wait_vehicle_seconds": 6563,
+            "served": 120,
+            "unfinished": 69,
+            "peak_queue": 70
+          }
+        }
+      ]
+    }
+  ]
+}

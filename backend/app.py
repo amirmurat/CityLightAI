@@ -32,6 +32,11 @@ def calibration():
     return json.loads((DATA / "calibration.json").read_text())
 
 
+@app.get('/api/benchmark')
+def benchmark():
+    return json.loads((DATA/'benchmark.json').read_text())
+
+
 @app.get("/api/video")
 def video():
     return FileResponse(DATA / "intersection.mp4", media_type="video/mp4")

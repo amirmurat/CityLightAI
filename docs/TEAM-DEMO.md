@@ -6,11 +6,11 @@ For an offline/portable read-only demo, build with `VITE_STATIC_DEMO=true`, run 
 
 Record in English with OBS or the operating system screen recorder:
 1. Show the camera view and play the nine-second reference clip.
-2. Pause near 2 seconds and explain the estimated stopped queue at B.
-3. Seek to 5.1 seconds. Show B-green and the numerical explanation. These are accelerated recommendations, not real actuation.
-4. Select receipt #1, open its Explorer link and evidence bundle. These are genuine Devnet records from the actual computed run.
+2. Click **See the queue** and explain the estimated stopped queue at the B marker.
+3. Click **Understand the decision**. Show B-green, its bounded remaining duration and the numerical explanation. These are accelerated recommendations, not real actuation.
+4. Click **Check on Solana**, then open the receipt's Explorer link and evidence bundle. These are genuine Devnet records from the actual computed run.
 5. Explain the trust layer: publisher, approved policy and evidence integrity, while raw video remains off-chain.
-6. State that this page replays computed results. Show the local full-processing version separately if claiming a new inference/publishing run.
+6. State that this page replays computed results. Show the local full-processing version separately if claiming a new inference/publishing run. If showing the comparison table, explicitly say it is a separate simplified simulation, not measured traffic improvements from this video.
 
 Target 2-3 minutes. Do not claim deployed municipal infrastructure or measured congestion reduction. Hide unrelated browser tabs and notifications. Pitch and demo videos are separate submission items; check the team's actual submission form.
 

@@ -68,15 +68,18 @@ pnpm test:chain
 pnpm build
 pnpm chain verify
 pnpm chain negative
+python -m backend.benchmark
 ```
 
 Controller tests exercise severe imbalance over time, clearance durations, conflicting-green prevention, stale data and monotonic timestamps. Serialization tests check Python/TypeScript compatibility and tamper detection. RPC verification reads actual program-owned accounts. Negative on-chain tests verify unauthorized publishers, wrong sequence and broken previous commitments using transaction simulation; they do not imply a real exploit was broadcast.
+
+The dashboard also shows a reproducible simplified closed-loop queue comparison against two fixed timing targets. It uses identical synthetic arrivals, ten seeds and the same controller constraints; it includes unfinished vehicles in waiting. It is separate from the camera clip and not a calibrated traffic simulator. Overload exposes a capacity limit, rather than a claim of universal adaptive improvement. See [benchmark protocol](docs/BENCHMARK.md) and raw trials in `data/benchmark.json`.
 
 ## Demo script (under three minutes)
 
 1. Play the reference clip. Show actual vehicle boxes and the two approach regions.
 2. Seek to about 2 seconds: the stopped queue at B becomes visible to the estimator.
-3. Seek to about 4.5 seconds: explain the transition through yellow/all-red to a B-green recommendation and its bounded duration.
+3. Use **Understand the decision** to seek to 5.1 seconds: explain the transition through yellow/all-red to a B-green recommendation and its bounded duration. Approach A/B labels appear directly on the video.
 4. Open the corresponding finalized receipt in Explorer and the downloadable evidence bundle.
 5. Run `pnpm chain verify` to read the chain independently; demonstrate rejection of an altered evidence bundle and unauthorized publisher.
 6. Explain that video cannot respond to a recommended signal. Traffic-effectiveness comparison requires a separate closed-loop simulation or supervised pilot.

@@ -7,6 +7,7 @@ if(run.metadata.run_id!==chain.run_id)throw Error('Proof snapshot mismatch');
 await copyFile('data/demo/latest.json','dist/api/run.json');
 await copyFile('data/demo/chain.json','dist/api/chain.json');
 await copyFile('data/calibration.json','dist/api/calibration.json');
+await copyFile('data/benchmark.json','dist/api/benchmark.json');
 for(const e of run.evidence)await writeFile(`dist/api/evidence/${e.bundle.sequence}.json`,JSON.stringify(e));
 let video;
 try{video=await readFile('data/intersection.mp4');}catch{const response=await fetch('https://videos.pexels.com/video-files/3052883/3052883-uhd_3840_2160_30fps.mp4');if(!response.ok)throw Error('Video download failed');video=Buffer.from(await response.arrayBuffer());}

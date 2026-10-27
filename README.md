@@ -2,6 +2,18 @@
 
 **Camera-based adaptive traffic recommendations with verifiable decision records on Solana Devnet.**
 
+**Browser edition:** open the [CityLightAI website](https://amirmurat.github.io/CityLightAI/), run real YOLOX analysis on the reference or your own short video, inspect the recommendations, and optionally publish evidence through Phantom/Solflare on Devnet. No Python installation, cloud VM or private publisher key is required by the website. See [browser usage, limitations and deployment](docs/BROWSER.md).
+
+### Start the browser edition locally
+
+```sh
+pnpm install --frozen-lockfile
+node scripts/prepare-browser.mjs
+pnpm dev
+```
+
+Choose a video up to 30 seconds / 100 MB and draw two approach regions before analysis. Video stays on your device. Model download is about 36 MB; speed depends on your device. Browser results have their own evidence hashes and must be published separately from the reference receipts. A browser wallet with test SOL is required only for new Devnet publication. Controller tests cover the TypeScript port against the saved Python run.
+
 CityLightAI observes two visible approaches in a licensed intersection video, detects/tracks vehicles, estimates stopped queues, recommends bounded signal phases, and commits decision evidence to an authorization-enforcing Solana program. The dashboard explains the recommendation and links to actual receipt accounts.
 
 This MVP processes prerecorded video and replays computed detections. It does not control physical traffic infrastructure. The signal timings are accelerated demonstration values. No citywide reduction in congestion, waiting time, fuel use or emissions is claimed.
@@ -18,7 +30,11 @@ This MVP processes prerecorded video and replays computed detections. It does no
 
 ## Run locally
 
-For teammates recording the demonstration, the shared GitHub Pages version is a read-only replay of the real processed run and actual Devnet records. It needs no installation or wallet. It does not run new inference or publish transactions. See [team recording instructions](docs/TEAM-DEMO.md).
+The browser edition is the default free deployment. The older Python backend remains available for local reproduction; it is not required by GitHub Pages.
+
+The operator workspace now includes a phase timeline, playback speed, detection overlays, full-run JSON export and browser SHA-256 verification. Browser verification compares evidence against the saved receipt hash; use the CLI for a fresh RPC verification.
+
+For teammates recording the demonstration, the shared GitHub Pages version starts with a replay of the original processed run and actual Devnet records. The browser edition also supports new on-device inference and optional wallet publication. See [browser instructions](docs/BROWSER.md).
 
 Requires Python 3.12, Node.js 22+ and pnpm. Windows PowerShell:
 
@@ -32,9 +48,9 @@ pnpm build
 .\.venv\Scripts\python.exe -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-Open http://127.0.0.1:8000 . For frontend development, run `pnpm dev` in a second terminal and open http://127.0.0.1:5173 . The Vite server proxies `/api` to the backend.
+For the older backend UI, set `$env:VITE_BROWSER_MODE='false'` before the build or frontend development command. Open http://127.0.0.1:8000 after a backend-mode build. For frontend development, run `pnpm dev` in a second terminal and open http://127.0.0.1:5173; in backend mode Vite proxies `/api` to Python.
 
-The local checkout includes the downloaded assets. They are excluded from Git; the downloader verifies SHA-256 against the pinned source files. Model and video details are in [data provenance](docs/DATA.md).
+Downloaded assets are excluded from Git and must be fetched on a fresh clone. The downloader verifies SHA-256 against the pinned source files. Model and video details are in [data provenance](docs/DATA.md).
 
 ### Generate observations
 

@@ -1,5 +1,7 @@
 # Team recording guide
 
+**Browser edition update:** the default website now supports new inference on the visitor's device and optional Phantom/Solflare Devnet publication. The instructions below describe the original reference replay. For the new complete scenario and accurate limits, use [BROWSER.md](BROWSER.md). Never present a reference receipt as proof of a newly analyzed video.
+
 The shared GitHub Pages page needs only a browser. It is a read-only replay of the actual processed clip and finalized Devnet records. It continues to work when Amir's laptop is off. No Python, model installation, wallet or private key is required.
 
 For an offline/portable read-only demo, build with `VITE_STATIC_DEMO=true`, run `node scripts/prepare-static.mjs`, then `node scripts/serve-demo.mjs`. Only Node.js is needed to serve an already built package. The full local backend is needed to execute a new inference and publication run.

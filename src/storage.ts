@@ -1,0 +1,6 @@
+import type {Run,Chain,Zones} from './traffic';
+export type Session={run:Run;chain:Chain;zones:Zones;video?:Blob;name:string};
+async function database(){return new Promise<IDBDatabase>((resolve,reject)=>{const request=indexedDB.open('citylight-browser',1);request.onupgradeneeded=()=>request.result.createObjectStore('session');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});}
+export async function saveSession(value:Session){const db=await database();try{await new Promise<void>((resolve,reject)=>{const tx=db.transaction('session','readwrite');tx.objectStore('session').put(value,'current');tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}finally{db.close();}}
+export async function loadSession(){const db=await database();try{return await new Promise<Session|undefined>((resolve,reject)=>{const request=db.transaction('session').objectStore('session').get('current');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});}finally{db.close();}}
+export async function clearSession(){const db=await database();try{await new Promise<void>((resolve,reject)=>{const tx=db.transaction('session','readwrite');tx.objectStore('session').delete('current');tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);});}finally{db.close();}}

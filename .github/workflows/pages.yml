@@ -25,11 +25,12 @@ jobs:
         with:
           version: '11.19.0'
       - run: pnpm install --frozen-lockfile
+      - run: pnpm test:chain
+      - run: node scripts/prepare-browser.mjs
       - run: pnpm build
         env:
-          VITE_STATIC_DEMO: 'true'
+          VITE_BROWSER_MODE: 'true'
           VITE_BASE_PATH: /CityLightAI/
-      - run: node scripts/prepare-static.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

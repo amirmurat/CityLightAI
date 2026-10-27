@@ -9,7 +9,11 @@ export type Progress={status:string;processed_ms?:number;duration_ms?:number;fra
 function waitEvent(target:EventTarget,name:string,signal:AbortSignal){return new Promise<void>((resolve,reject)=>{const timeout=setTimeout(()=>finish(Error('Video decoding timed out')),30000);const done=()=>finish();const fail=()=>finish(Error('Video decoding failed'));const abort=()=>finish(new DOMException('Analysis cancelled','AbortError'));function finish(error?:Error){clearTimeout(timeout);target.removeEventListener(name,done);target.removeEventListener('error',fail);signal.removeEventListener('abort',abort);error?reject(error):resolve();}target.addEventListener(name,done,{once:true});target.addEventListener('error',fail,{once:true});signal.addEventListener('abort',abort,{once:true});if(signal.aborted)abort();});}
 export async function analyzeVideo(src:string,zones:Zones,intersection:string,progress:(value:Progress)=>void,signal:AbortSignal):Promise<Run>{
  if(!globalThis.Worker||!globalThis.OffscreenCanvas||!globalThis.crypto?.subtle)throw Error('Browser analysis needs a recent browser with WebAssembly, OffscreenCanvas and HTTPS. Try Chrome or Edge.');
- for(const key of ['A','B'])if(!zones[key]||zones[key].length<3)throw Error('Draw both approach regions before analysis');
+ for(const key of ['A','B']){
+  const polygon=zones[key];if(!polygon||polygon.length<3||polygon.some(p=>p.length!==2||p.some(v=>!Number.isFinite(v)||v<0||v>1)))throw Error('Draw both approach regions inside the video before analysis');
+  const area=Math.abs(polygon.reduce((sum,p,i)=>{const next=polygon[(i+1)%polygon.length];return sum+p[0]*next[1]-next[0]*p[1];},0))/2;
+  if(area<.0001)throw Error('Approach region is too small or crossed. Draw its corners in perimeter order.');
+ }
  const base=new URL(import.meta.env.BASE_URL,location.href).href;const worker=new Worker(new URL('./detector.worker.ts',import.meta.url),{type:'module'});const video=document.createElement('video');video.muted=true;video.preload='auto';video.playsInline=true;
  let pending:((value:any)=>void)|undefined;let failed:((error:Error)=>void)|undefined;
  const abort=()=>{worker.terminate();failed?.(new DOMException('Analysis cancelled','AbortError'));};signal.addEventListener('abort',abort,{once:true});
@@ -17,7 +21,7 @@ export async function analyzeVideo(src:string,zones:Zones,intersection:string,pr
  const request=(data:unknown,transfer:Transferable[]=[])=>new Promise<any>((resolve,reject)=>{if(signal.aborted)return reject(new DOMException('Analysis cancelled','AbortError'));pending=resolve;failed=reject;worker.postMessage(data,transfer);});
  const started=performance.now();
  try{
-  progress({status:'loading',message:'Downloading verified model (36 MB) and preparing WebAssemblyвЂ¦'});
+  progress({status:'loading',message:'Downloading verified model (36 MB) and preparing WebAssembly...'});
   const loaded=waitEvent(video,'loadeddata',signal);video.src=src;video.load();await loaded;
   if(!Number.isFinite(video.duration)||video.duration<=0||video.duration>30)throw Error('Choose a decodable video up to 30 seconds.');
   const source=await fetch(src,{signal});if(!source.ok)throw Error('Video download failed');const videoHash=await bytesHash(await source.arrayBuffer());
@@ -29,7 +33,7 @@ export async function analyzeVideo(src:string,zones:Zones,intersection:string,pr
    const image=await createImageBitmap(video);const result=await request({type:'frame',image,zones},[image]);const tracked=tracker.update(result.detections,ms,zones,metadata.width,metadata.height);const decision=controller.step(ms,tracked.approaches);
    const frame:Frame={time_ms:ms,...tracked,decision,inference_ms:result.inference_ms};frames.push(frame);
    if(!evidence.length||decision.transition&&decision.phase.endsWith('GREEN')){const bundle={schema:2,sequence:evidence.length,run:metadata,observation:frame};evidence.push({bundle,hash:await evidenceHash(bundle)});}
-   progress({status:'running',processed_ms:ms,duration_ms:duration,frames:frames.length,message:`Analyzing frame ${frames.length} on your deviceвЂ¦`});
+   progress({status:'running',processed_ms:ms,duration_ms:duration,frames:frames.length,message:`Analyzing frame ${frames.length} on your device...`});
   }
   return {metadata,frames,evidence,processing_ms:Math.round(performance.now()-started)};
  }finally{signal.removeEventListener('abort',abort);worker.terminate();video.removeAttribute('src');video.load();}
